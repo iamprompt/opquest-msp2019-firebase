@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['ant-design-vue/dist/antd.css'],
+  css: ['ant-design-vue/dist/antd.css', '~/assets/style/webfont.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -41,8 +41,12 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: []
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

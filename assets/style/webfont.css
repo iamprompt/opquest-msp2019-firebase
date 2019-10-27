@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Maledpan';
+  src: url('~assets/fonts/Maledpan-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Maledpan';
+  src: url('~assets/fonts/Maledpan-Light.otf') format('opentype');
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: 'Maledpan';
+  src: url('~assets/fonts/Maledpan-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'CaesarDressing';
+  src: url('~assets/fonts/CaesarDressing-Regular.ttf') format('truetype');
+}
+
+* {
+  font-family: 'Maledpan', sans-serif;
+}
