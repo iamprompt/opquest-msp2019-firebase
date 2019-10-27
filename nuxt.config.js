@@ -47,9 +47,6 @@ export default {
   styleResources: {
     scss: []
   },
-  router: {
-    middleware: 'router-auth'
-  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

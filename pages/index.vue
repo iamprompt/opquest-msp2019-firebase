@@ -25,12 +25,14 @@
 <script>
 import FacebookLogin from '~/components/FacebookLogin.vue'
 import Logo from '~/components/Logo.vue'
+import requiredLogout from '~/mixins/requiredLogout'
 
 export default {
   components: {
     Logo,
     FacebookLogin
-  }
+  },
+  mixins: [requiredLogout]
 }
 </script>
 

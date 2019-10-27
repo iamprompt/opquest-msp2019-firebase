@@ -6,6 +6,7 @@
       <h2 class="subtitle">
         MSP Open House Activity for MUICT Open House 2019
       </h2>
+      <Logout />
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green"
           >Documentation</a
@@ -23,11 +24,15 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Logout from '~/components/Logout'
+import requiredLogin from '~/mixins/requiredLogin'
 
 export default {
   components: {
-    Logo
-  }
+    Logo,
+    Logout
+  },
+  mixins: [requiredLogin]
 }
 </script>
 
