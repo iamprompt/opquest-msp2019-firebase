@@ -2,9 +2,8 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">Login</h1>
+      <h1 class="title">Quest</h1>
       <h2 class="subtitle">MSP Open House Activity for MUICT Open House 2019</h2>
-      <facebook-login></facebook-login>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
         <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
@@ -14,13 +13,11 @@
 </template>
 
 <script>
-import FacebookLogin from '~/components/FacebookLogin.vue'
 import Logo from '~/components/Logo.vue'
 
 export default {
   components: {
-    Logo,
-    FacebookLogin
+    Logo
   }
 }
 </script>
