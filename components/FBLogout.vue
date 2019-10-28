@@ -19,6 +19,7 @@ export const LoginBtn = styled.button`
   font-family: 'CaesarDressing', sans-serif;
   font-size: 24px;
   border: none;
+  cursor: pointer;
 `
 
 /* eslint-disable */
