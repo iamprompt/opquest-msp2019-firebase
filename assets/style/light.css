@@ -1,0 +1,7 @@
+html {
+  background: linear-gradient(180deg, #ffbc5a 0%, #ffdda0 58%) no-repeat !important;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0px 0px;
+  overscroll-behavior: none;
+}

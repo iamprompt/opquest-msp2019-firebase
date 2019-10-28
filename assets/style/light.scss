@@ -1,0 +1,9 @@
+@import 'colors';
+
+html {
+  background: $gold-gradient no-repeat;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0px 0px;
+  overscroll-behavior: none;
+}

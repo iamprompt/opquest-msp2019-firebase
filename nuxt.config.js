@@ -19,15 +19,15 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#000000' },
   /*
    ** Global CSS
    */
-  css: ['ant-design-vue/dist/antd.css', '~/assets/style/webfont.css'],
+  css: ['~/assets/style/webfont.css'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/antd-ui'],
+  plugins: ['@/plugins/firebase'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -45,7 +45,7 @@ export default {
     '@nuxtjs/style-resources'
   ],
   styleResources: {
-    scss: []
+    scss: ['~/assets/style/_colors.scss']
   },
   /*
    ** Axios module configuration
