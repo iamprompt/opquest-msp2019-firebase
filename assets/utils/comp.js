@@ -33,13 +33,6 @@ export const QContainer = styled.div`
 
 export const ABox = styled.div`
   display: flex;
-  flex-direction: column;
   margin-top: 10px;
   justify-content: center;
-`
-
-export const AChoice = styled.div`
-  display: flex;
-  margin-top: 10px;
-  justify-content: left;
 `
