@@ -10,7 +10,9 @@
 </template>
 
 <script>
+/* eslint-disable */
 import styled from 'vue-styled-components'
+import { fireFunc } from '../../plugins/firebase'
 import Logo from '~/components/Logo'
 import FBLogout from '~/components/FBLogout'
 import { Container } from '~/assets/utils/comp'
@@ -27,6 +29,27 @@ export const Subtitle = styled.div`
   font-size: 18px;
   margin-bottom: 10px;
 `
+
+const questStatus = fireFunc.httpsCallable('questStatus')
+questStatus()
+  .then(function(result) {
+    console.log(result)
+  })
+  .catch(function(error) {
+    const code = error.code
+    const message = error.message
+    const details = error.details
+
+    console.error('There was an error when calling the Cloud Function', error)
+    window.alert(
+      'There was an error when calling the Cloud Function:\n\nError Code: ' +
+        code +
+        '\nError Message:' +
+        message +
+        '\nError Details:' +
+        details
+    )
+  })
 
 export default {
   components: {

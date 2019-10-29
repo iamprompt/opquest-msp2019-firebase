@@ -21,6 +21,8 @@
     "ant-design-vue": "^1.1.10",
     "cross-env": "^6.0.3",
     "firebase": "^7.2.2",
+    "firebase-admin": "^8.6.1",
+    "firebase-functions": "^3.3.0",
     "node-sass": "^4.13.0",
     "nuxt": "^2.0.0",
     "sass-loader": "^8.0.0",
