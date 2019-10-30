@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "mumsp-op2019"
+  },
+  "targets": {
+    "mumsp-op2019": {
+      "hosting": {
+        "mumspquest": [
+          "mumspquest"
+        ]
+      }
+    }
   }
 }
