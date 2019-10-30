@@ -2,7 +2,7 @@
   <Container>
     <Logo w="150" />
     <Title>ยินดีต้อนรับ</Title>
-    <Subtitle>ชื่อเล่น</Subtitle>
+    <Subtitle id="name"></Subtitle>
     <AllStageBox></AllStageBox>
     <FBLogout />
     <Viharn />
@@ -31,10 +31,16 @@ export const Subtitle = styled.div`
 `
 
 const questStatus = firebase.functions().httpsCallable('questStatus')
-questStatus()
-  .then(function(result) {
-    console.log(result)
-  })
+questStatus().then(function(result) {
+  const name = result.data.name
+  const Q1status = result.data.Q1status
+  const Q2status = result.data.Q2status
+  const Q3status = result.data.Q3status
+  const Q4status = result.data.Q4status
+  const nameBox = document.getElementById('name')
+  nameBox.textContent = name
+  console.log(result, '+', name, '+', Q1status, '+', Q2status, '+', Q3status, '+', Q4status)
+})
 
 export default {
   components: {
