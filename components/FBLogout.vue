@@ -1,6 +1,6 @@
 <!-- prettier-ignore -->
 <template>
-  <LoginBtn @click="FBlogin">
+  <LoginBtn class="logoutbtn" @click="FBlogin">
     Logout
   </LoginBtn>
 </template>
@@ -10,7 +10,8 @@ import styled from 'vue-styled-components'
 import { fireAuth } from '@/plugins/firebase'
 
 export const LoginBtn = styled.button`
-  position: fixed;
+  position: block;
+  margin-top: 20px
   bottom: 60px;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

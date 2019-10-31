@@ -4,9 +4,9 @@ export default {
   mounted: function() {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        window.location = '/quest'
+        window.location.href = 'https://mumspquest.web.app/quest/'
       } else {
-        console.log('[INFO] No Signin')
+        // console.log('[INFO] No Signin')
       }
     })
   }

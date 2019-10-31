@@ -1,28 +1,12 @@
 <template>
   <div>
     <StageArea>
-      <Stage
-        stage-name="สำนักที่ 1"
-        file-name="Code"
-        @click.native="stage1()"
-      ></Stage>
-      <Stage
-        stage-name="สำนักที่ 2"
-        file-name="Music"
-        @click.native="stage2()"
-      ></Stage>
+      <Stage id="stage1" stage-name="สำนักที่ 1" file-name="Content"></Stage>
+      <Stage id="stage2" stage-name="สำนักที่ 2" file-name="Music"></Stage>
     </StageArea>
     <StageArea>
-      <Stage
-        stage-name="สำนักที่ 3"
-        file-name="Create"
-        @click.native="stage3()"
-      ></Stage>
-      <Stage
-        stage-name="สำนักที่ 4"
-        file-name="Content"
-        @click.native="stage4()"
-      ></Stage>
+      <Stage id="stage3" stage-name="สำนักที่ 3" file-name="Create"></Stage>
+      <Stage id="stage4" stage-name="สำนักที่ 4" file-name="Code"></Stage>
     </StageArea>
   </div>
 </template>
@@ -41,28 +25,6 @@ export default {
   components: {
     Stage,
     StageArea
-  },
-  methods: {
-    stage1() {
-      this.$router.push({
-        path: '/quest/1'
-      })
-    },
-    stage2() {
-      this.$router.push({
-        path: '/quest/1'
-      })
-    },
-    stage3() {
-      this.$router.push({
-        path: '/quest/1'
-      })
-    },
-    stage4() {
-      this.$router.push({
-        path: '/quest/1'
-      })
-    }
   }
 }
 </script>

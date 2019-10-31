@@ -6,12 +6,12 @@ export default {
     return new Promise((resolve, reject) => {
       firebase.auth().onAuthStateChanged(function(_user) {
         if (_user) {
-          console.log('[INFO] Signin user: ', _user)
+          // console.log('[INFO] Signin user: ', _user)
           const user = userParser(_user)
           return resolve({ user })
         } else {
-          window.location = '/'
-        }
+          window.location.href = 'https://mumspquest.web.app/'
+        } 
       })
     })
   }

@@ -1,5 +1,6 @@
 <template>
   <StageBox>
+    <NStar file-name="checked1" />
     <img
       :src="require(`~/assets/images/stages/${fileName}.svg`)"
       class="Stageimg"
@@ -10,6 +11,7 @@
 
 <script>
 import styled from 'vue-styled-components'
+import NStar from '~/components/Stages/NStar'
 
 export const StageBox = styled.div`
   display: flex;
@@ -23,6 +25,8 @@ export const StageBox = styled.div`
   padding: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  cursor: pointer;
+  visibility: visible;
 `
 
 export const StageDetail = styled.div`
@@ -33,7 +37,7 @@ export const StageDetail = styled.div`
 `
 
 export default {
-  components: { StageBox, StageDetail },
+  components: { StageBox, StageDetail, NStar },
   props: {
     stageName: {
       type: String,
@@ -50,5 +54,14 @@ export default {
 <style>
 .Stageimg {
   height: 50px;
+}
+
+.star {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  height: 100px;
+  margin-top: -5px;
+  margin-left: -50px;
 }
 </style>

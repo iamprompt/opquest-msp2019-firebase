@@ -9,7 +9,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "deploy": "eslint --ext .js,.vue --ignore-path .gitignore . && nuxt generate && firebase target:apply hosting mumspquest mumspquest && firebase deploy --non-interactive --only hosting:mumspquest"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"
