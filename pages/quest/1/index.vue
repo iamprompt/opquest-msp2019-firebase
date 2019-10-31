@@ -83,7 +83,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 import styled from 'vue-styled-components'
 import firebase from '~/plugins/firebase'
 import Logo from '~/components/Logo'
@@ -156,25 +155,26 @@ export default {
   methods: {
     submitans() {
       let inputans
-      let radio = document.querySelectorAll('.choice')
+      const radio = document.querySelectorAll('.choice')
 
       for (let i = 0, length = radio.length; i < length; i++) {
         if (radio[i].checked) {
           inputans = radio[i].value
+          // console.log('selected choice ', inputans);
           break
         }
       }
 
       const Q1check = firebase.functions().httpsCallable('Q1check')
       Q1check({ userans: inputans }).then(function(result) {
-        console.log(result.data)
+        // console.log(result.data)
         const res = result.data
-        const correctmodal = document.getElementById("CorrectBox");
-        const wrongmodal = document.getElementById("WrongBox");
+        const correctmodal = document.getElementById('CorrectBox')
+        const wrongmodal = document.getElementById('WrongBox')
         if (res === true) {
-          correctmodal.style.display = "block";
+          correctmodal.style.display = 'block'
         } else if (res === false) {
-          wrongmodal.style.display = "block";
+          wrongmodal.style.display = 'block'
         }
       })
     },
@@ -182,8 +182,8 @@ export default {
       window.location.href = 'https://mumspquest.web.app/quest/'
     },
     tryagain() {
-      const wrongmodal = document.getElementById("WrongBox");
-      wrongmodal.style.display = "none";
+      const wrongmodal = document.getElementById('WrongBox')
+      wrongmodal.style.display = 'none'
     }
   }
 }
@@ -300,6 +300,6 @@ span.Label {
   margin: 10% auto; /* 15% from the top and centered */
   padding: 20px;
   width: 70%; /* Could be more or less, depending on screen size */
-  border-radius: 15px; 
+  border-radius: 15px;
 }
 </style>

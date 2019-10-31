@@ -5,7 +5,9 @@
     <QContainer>
       <QTitle>ภารกิจ</QTitle>
       <QText id="mission"></QText>
-      <Btn text="ย้อนกลับ" @click.native="backtomenu()" />
+      <CodeUnlock />
+      <Btn text="ย้อนกลับ" pos="left" @click.native="backtomenu()" />
+      <Btn text="ปลดล็อก" pos="right" @click.native="unlockcode()" />
     </QContainer>
     <MUICTOP />
     <MTNBlue />
@@ -20,12 +22,13 @@ import StageHeader from '~/components/Stages/StageHeader'
 import Btn from '~/components/button'
 import MUICTOP from '~/components/Footer/MUICTOP'
 import MTNBlue from '~/components/Footer/MTNBlue'
+import CodeUnlock from '~/components/Stages/CodeUnlock'
 import { Container, QContainer, QTitle, QText, ABox } from '~/assets/utils/comp'
 
 const getMissionQ4 = firebase.functions().httpsCallable('getMissionQ4')
 getMissionQ4().then(function(result) {
   const misson = result.data
-  console.log(result.data);
+  console.log(result.data)
 
   const qText = document.getElementById('mission')
 
@@ -45,11 +48,25 @@ export default {
     MUICTOP,
     StageHeader,
     MTNBlue,
-    Btn
+    Btn,
+    CodeUnlock
   },
   methods: {
     backtomenu() {
       window.location.href = 'https://mumspquest.web.app/quest/'
+    },
+    unlockcode() {
+      const usercode = document.querySelector('input.codeunlockfield').value
+
+      const UnlockCode = firebase.functions().httpsCallable('unlockcode')
+      UnlockCode({ usercode: usercode, stage: "4" }).then(function(result) {
+        const checked = result.data
+        console.log(result.data)
+        console.log(checked)
+        if (checked === true) {
+          window.location.href = 'https://mumspquest.web.app/quest/'
+        }
+      })
     }
   }
 }
@@ -166,6 +183,6 @@ span.Label {
   margin: 10% auto; /* 15% from the top and centered */
   padding: 20px;
   width: 70%; /* Could be more or less, depending on screen size */
-  border-radius: 15px; 
+  border-radius: 15px;
 }
 </style>
