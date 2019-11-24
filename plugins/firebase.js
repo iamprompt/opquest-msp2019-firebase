@@ -15,7 +15,6 @@ if (!firebase.apps.length) {
     measurementId: 'G-9ECFY7605N'
   }
   firebase.initializeApp(config)
-  firebase.firestore().settings({ timestampsInSnapshots: true })
 }
 
 const fireAuth = firebase.auth()

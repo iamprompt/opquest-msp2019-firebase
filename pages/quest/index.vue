@@ -128,6 +128,18 @@ export default {
 
       setTimeout(() => this.$nuxt.$loading.finish(), 2000)
     })
+  },
+  head() {
+    return {
+      title: 'Mahidol MSP Open House 2019 Quest',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'MSP Open House Activity for MUICT Open House 2019'
+        }
+      ]
+    }
   }
 }
 </script>

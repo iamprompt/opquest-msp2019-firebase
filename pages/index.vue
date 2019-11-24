@@ -26,7 +26,19 @@ export default {
     Viharn,
     FBLogin
   },
-  mixins: [requiredLogout]
+  mixins: [requiredLogout],
+  head() {
+    return {
+      title: 'Mahidol MSP Open House 2019 Quest',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'MSP Open House Activity for MUICT Open House 2019'
+        }
+      ]
+    }
+  }
 }
 </script>
 

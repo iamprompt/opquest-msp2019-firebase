@@ -10,7 +10,7 @@
 
 <script>
 import styled from 'vue-styled-components'
-import firebase, { fireAuth } from '@/plugins/firebase'
+import firebase from '@/plugins/firebase'
 
 export const LoginBtn = styled.button`
   position: fixed;
@@ -36,7 +36,7 @@ export default {
       provider.addScope('email')
       provider.addScope('public_profile')
       try {
-        await fireAuth.signInWithRedirect(provider)
+        await firebase.auth().signInWithRedirect(provider)
         console.log('Finished Facebook login')
 
         return location.reload()

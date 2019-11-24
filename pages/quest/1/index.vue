@@ -92,6 +92,7 @@ import MUICTOP from '~/components/Footer/MUICTOP'
 import MTNBlue from '~/components/Footer/MTNBlue'
 import NStar from '~/components/Stages/NStar'
 import { Container, QContainer, QTitle, QText, ABox } from '~/assets/utils/comp'
+import requiredLogin from '~/mixins/requiredLogin'
 
 export const CTitle = styled.div`
   margin-top: 20px;
@@ -152,6 +153,7 @@ export default {
     Subtitle,
     NStar
   },
+  mixins: [requiredLogin],
   methods: {
     submitans() {
       let inputans
@@ -184,6 +186,18 @@ export default {
     tryagain() {
       const wrongmodal = document.getElementById('WrongBox')
       wrongmodal.style.display = 'none'
+    }
+  },
+  head() {
+    return {
+      title: 'Mahidol MSP Open House 2019 Quest',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'MSP Open House Activity for MUICT Open House 2019'
+        }
+      ]
     }
   }
 }

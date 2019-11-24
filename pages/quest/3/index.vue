@@ -24,6 +24,7 @@ import MUICTOP from '~/components/Footer/MUICTOP'
 import MTNBlue from '~/components/Footer/MTNBlue'
 import CodeUnlock from '~/components/Stages/CodeUnlock'
 import { Container, QContainer, QTitle, QText, ABox } from '~/assets/utils/comp'
+import requiredLogin from '~/mixins/requiredLogin'
 
 const getMissionQ3 = firebase.functions().httpsCallable('getMissionQ3')
 getMissionQ3().then(function(result) {
@@ -51,6 +52,7 @@ export default {
     Btn,
     CodeUnlock
   },
+  mixins: [requiredLogin],
   methods: {
     backtomenu() {
       window.location.href = 'https://mumspquest.web.app/quest/'
@@ -67,6 +69,18 @@ export default {
           window.location.href = 'https://mumspquest.web.app/quest/'
         }
       })
+    }
+  },
+  head() {
+    return {
+      title: 'Mahidol MSP Open House 2019 Quest',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'MSP Open House Activity for MUICT Open House 2019'
+        }
+      ]
     }
   }
 }
